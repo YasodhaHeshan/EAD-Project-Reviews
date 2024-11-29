@@ -15,7 +15,7 @@ public class ReviewsController {
     @Autowired
     private ReviewsService reviewsService;
 
-    @PostMapping
+    @PostMapping("/reviews")
     public ResponseEntity<Reviews> createReview(@RequestBody Reviews review) {
         return ResponseEntity.ok(reviewsService.createReview(review));
     }
@@ -30,7 +30,7 @@ public class ReviewsController {
         return ResponseEntity.ok(reviewsService.getReviewsByUserId(userId));
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/reviews/{id}")
     public ResponseEntity<Reviews> getReviewById(@PathVariable int id) {
         Reviews review = reviewsService.getReviewById(id);
         if (review != null) {
@@ -39,7 +39,7 @@ public class ReviewsController {
         return ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/reviews/{id}")
     public ResponseEntity<Void> deleteReview(@PathVariable int id) {
         reviewsService.deleteReview(id);
         return ResponseEntity.ok().build();
