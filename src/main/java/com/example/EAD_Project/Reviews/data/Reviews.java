@@ -2,52 +2,60 @@ package com.example.EAD_Project.Reviews.data;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+import java.util.UUID;
+
 @Entity
 @Table(name = "review")
 public class Reviews {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id" , nullable = false, updatable = false, columnDefinition = "char(36)")
+    private String id;
 
-    @Column(name = "id")
-    private int id;
+    @Column(name = "hotel_id" , nullable = false)
+    private String hotelId;
 
-    @Column(name = "hotel_id")
-    private int hotelId;
-
-    @Column(name = "user_id")
-    private int userId;
+    @Column(name = "user_id" , nullable = false)
+    private String userId;
 
     @Column(name = "message")
     private String message;
 
-    @Column(name = "rating")
+    @Column(name = "rating" )
     private int rating;
 
-    @Column(name = "created_date")
+    @Column(name = "created_date" , updatable = false)
     private java.util.Date createdDate;
 
-    public int getId() {
+    @Column(name = "updated_date" )
+    private java.util.Date updatedDate;
+
+    public Reviews() {
+        this.id= UUID.randomUUID().toString();
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getHotelId() {
+    public String getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(int hotelId) {
+    public void setHotelId(String hotelId) {
         this.hotelId = hotelId;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -67,11 +75,19 @@ public class Reviews {
         this.rating = rating;
     }
 
-    public java.util.Date getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(java.util.Date createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public Date getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Date updatedDate) {
+        this.updatedDate = updatedDate;
     }
 }

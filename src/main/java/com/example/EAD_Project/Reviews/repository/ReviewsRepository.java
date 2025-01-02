@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ReviewsRepository extends JpaRepository<Reviews, Integer> {
-    List<Reviews> findByHotelId(int hotelId);
-    List<Reviews> findByUserId(int userId);
+public interface ReviewsRepository extends JpaRepository<Reviews, String> {
+    List<Reviews> findByHotelId(String hotelId);
+    List<Reviews> findByUserId(String userId);
 } 

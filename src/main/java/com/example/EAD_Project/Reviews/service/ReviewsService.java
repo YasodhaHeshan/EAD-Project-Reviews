@@ -19,19 +19,19 @@ public class ReviewsService {
         return reviewsRepository.save(review);
     }
 
-    public List<Reviews> getReviewsByHotelId(int hotelId) {
+    public List<Reviews> getReviewsByHotelId(String hotelId) {
         return reviewsRepository.findByHotelId(hotelId);
     }
 
-    public List<Reviews> getReviewsByUserId(int userId) {
+    public List<Reviews> getReviewsByUserId(String userId) {
         return reviewsRepository.findByUserId(userId);
     }
 
-    public Reviews getReviewById(int id) {
+    public Reviews getReviewById(String id) {
         return reviewsRepository.findById(id).orElse(null);
     }
 
-    public void deleteReview(int id) {
+    public void deleteReview(String id) {
         reviewsRepository.deleteById(id);
     }
 } 
