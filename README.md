@@ -1,4 +1,4 @@
-# EAD-Project-Reviews-
+# EAD-Project-Reviews
 Reviews Micro Service of EAD project
 
 ## Table of Contents
@@ -9,11 +9,11 @@ Reviews Micro Service of EAD project
 - [API Endpoints](#api-endpoints)
 
 ## Introduction
-The EAD-Project-Reviews- repository contains the Reviews Micro Service of the EAD project. This service is responsible for managing and handling reviews.
+The EAD-Project-Reviews repository contains the Reviews Micro Service of the EAD project. This service is responsible for managing and handling reviews.
 
 ## Installation
 To install the project, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YasodhaHeshan/EAD-Proj
+   git clone https://github.com/YasodhaHeshan/EAD-Project-Reviews
